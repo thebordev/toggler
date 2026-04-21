@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy for Toggler</title>
+  <meta name="description" content="Privacy Policy for the Toggler mobile application" />
+  <style>
+    :root {
+      --bg: #f2f6ff;
+      --card: rgba(255, 255, 255, 0.92);
+      --card-secondary: #eef5ff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #007aff;
+      --accent-soft: rgba(0, 122, 255, 0.12);
+      --border: rgba(17, 24, 39, 0.08);
+      --shadow: 0 24px 70px rgba(0, 61, 128, 0.14);
+      --radius: 20px;
+      --max-width: 920px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(0, 122, 255, 0.18), transparent 34%),
+        linear-gradient(180deg, #f2f6ff 0%, #ffffff 48%, #eef4fb 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 64px 0 32px;
+    }
+
+    .hero-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 40px 32px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(32px, 5vw, 48px);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 720px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .meta-item {
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      background: rgba(0, 122, 255, 0.04);
+      border-radius: 14px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 24px;
+      padding: 12px 0 56px;
+    }
+
+    .toc {
+      position: sticky;
+      top: 24px;
+      align-self: start;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .toc h2 {
+      margin: 0 0 14px;
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    .toc ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .toc li + li {
+      margin-top: 10px;
+    }
+
+    .toc a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .toc a:hover {
+      color: var(--accent);
+    }
+
+    .content {
+      display: grid;
+      gap: 18px;
+    }
+
+    .section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    .section p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .section p:last-child,
+    .section ul:last-child {
+      margin-bottom: 0;
+    }
+
+    .section ul {
+      margin: 14px 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .section li + li {
+      margin-top: 8px;
+    }
+
+    .note {
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+      padding: 14px 16px;
+      border-radius: 12px;
+      color: #003d80;
+      margin-top: 14px;
+    }
+
+    .contact-box {
+      background: linear-gradient(180deg, rgba(0, 122, 255, 0.08), rgba(255, 255, 255, 0.9));
+      border: 1px solid rgba(0, 122, 255, 0.18);
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    footer {
+      padding: 0 0 40px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        position: static;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding-top: 32px;
+      }
+
+      .hero-card,
+      .section,
+      .toc {
+        padding: 22px;
+      }
+
+      .meta {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <div class="hero-card">
+        <div class="eyebrow">Toggler · Privacy Policy</div>
+        <h1>Privacy Policy for Toggler</h1>
+        <p class="subtitle">
+          This Privacy Policy explains how the Toggler mobile application handles user information.
+          Toggler is designed to minimize data collection and keep operational FeatureHub data under the user's control.
+        </p>
+        <div class="meta">
+          <div class="meta-item"><strong>Effective date:</strong> April 21, 2026</div>
+          <div class="meta-item"><strong>Last updated:</strong> April 21, 2026</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="layout">
+      <nav class="toc" aria-label="Table of contents">
+        <h2>Contents</h2>
+        <ul>
+          <li><a href="#information">1. Information We Collect</a></li>
+          <li><a href="#local">2. Information Stored on Device</a></li>
+          <li><a href="#network">3. Server Connections</a></li>
+          <li><a href="#technical">4. Device and Technical Information</a></li>
+          <li><a href="#permissions">5. Permissions</a></li>
+          <li><a href="#third-party">6. Third-Party Services</a></li>
+          <li><a href="#sharing">7. Data Sharing</a></li>
+          <li><a href="#retention">8. Data Retention</a></li>
+          <li><a href="#children">9. Children’s Privacy</a></li>
+          <li><a href="#security">10. Security</a></li>
+          <li><a href="#changes">11. Changes to This Privacy Policy</a></li>
+          <li><a href="#contact">12. Contact</a></li>
+        </ul>
+      </nav>
+
+      <section class="content">
+        <article class="section" id="information">
+          <h2>1. Information We Collect</h2>
+          <p>
+            Toggler does <strong>not collect, sell, share, or use personal information for tracking or advertising</strong>.
+          </p>
+          <p>The App:</p>
+          <ul>
+            <li>does not require a Toggler account</li>
+            <li>does not collect analytics data</li>
+            <li>does not include advertising or tracking SDKs</li>
+            <li>does not collect location information</li>
+            <li>does not access contacts, camera, microphone, or photos</li>
+          </ul>
+        </article>
+
+        <article class="section" id="local">
+          <h2>2. Information Stored on Device</h2>
+          <p>
+            To provide its core functionality, Toggler may store certain information locally on the user's device.
+          </p>
+          <p>This may include:</p>
+          <ul>
+            <li>the server URL entered by the user</li>
+            <li>the bearer token entered by the user</li>
+            <li>the selected app language</li>
+            <li>the onboarding completion state</li>
+            <li>local feature group snapshots created by the user</li>
+          </ul>
+          <div class="note">
+            This information remains on the user's device unless the user sends data to their own FeatureHub-compatible server through the App's normal functionality.
+          </div>
+        </article>
+
+        <article class="section" id="network">
+          <h2>3. Server Connections</h2>
+          <p>
+            Toggler connects only to the server URL provided by the user. The App uses the bearer token entered by the user
+            to request projects, feature groups, feature values, and rollout strategy data from that server.
+          </p>
+          <p>
+            Production feature data is exchanged between the user's device and the server selected by the user.
+            The developer of Toggler does not receive or process that data unless the user chooses a server operated by the developer.
+          </p>
+        </article>
+
+        <article class="section" id="technical">
+          <h2>4. Device and Technical Information</h2>
+          <p>
+            While Toggler itself does not collect analytics or tracking data, certain technical information may be processed
+            automatically by Apple or application distribution platforms to provide installation, update, diagnostics, and security functionality.
+          </p>
+          <p>This may include:</p>
+          <ul>
+            <li>device model</li>
+            <li>operating system version</li>
+            <li>application version</li>
+            <li>basic crash or diagnostic information, if provided by the platform</li>
+          </ul>
+          <div class="note">
+            Platform-provided information is handled according to the privacy practices of the applicable platform provider.
+          </div>
+        </article>
+
+        <article class="section" id="permissions">
+          <h2>5. Permissions</h2>
+          <p>
+            Toggler does <strong>not request access to sensitive device permissions</strong>, including but not limited to:
+          </p>
+          <ul>
+            <li>Location</li>
+            <li>Camera</li>
+            <li>Microphone</li>
+            <li>Contacts</li>
+            <li>Photos</li>
+            <li>Phone state</li>
+          </ul>
+        </article>
+
+        <article class="section" id="third-party">
+          <h2>6. Third-Party Services</h2>
+          <p>
+            Toggler does <strong>not integrate third-party SDKs or services that collect user data</strong>, such as:
+          </p>
+          <ul>
+            <li>analytics services</li>
+            <li>advertising networks</li>
+            <li>tracking tools</li>
+            <li>external user profiling services</li>
+          </ul>
+        </article>
+
+        <article class="section" id="sharing">
+          <h2>7. Data Sharing</h2>
+          <p>
+            Toggler does not collect personal data for the developer. As a result, the developer does not share user personal information with third parties.
+          </p>
+        </article>
+
+        <article class="section" id="retention">
+          <h2>8. Data Retention</h2>
+          <p>
+            Locally stored information remains on the user's device until the user changes it, removes the App, clears local storage, or deletes local snapshots.
+          </p>
+          <p>
+            Data stored on a user's FeatureHub-compatible server is governed by that server's own retention and privacy practices.
+          </p>
+        </article>
+
+        <article class="section" id="children">
+          <h2>9. Children’s Privacy</h2>
+          <p>
+            Toggler is intended for developer, release management, and business workflows. It is not directed to children.
+          </p>
+          <p>
+            The App does not knowingly collect personal information from children.
+          </p>
+        </article>
+
+        <article class="section" id="security">
+          <h2>10. Security</h2>
+          <p>
+            Toggler uses standard platform networking to connect to user-provided servers. Users should protect their bearer tokens and only connect to trusted servers.
+          </p>
+          <p>
+            We take reasonable steps to develop the App using standard security practices, but no method of transmission or local storage is completely secure.
+          </p>
+        </article>
+
+        <article class="section" id="changes">
+          <h2>11. Changes to This Privacy Policy</h2>
+          <p>
+            We may update this Privacy Policy from time to time.
+          </p>
+          <p>
+            Any updates will be published on this page with an updated <strong>Last updated</strong> date.
+          </p>
+        </article>
+
+        <article class="section contact-box" id="contact">
+          <h2>12. Contact</h2>
+          <p>
+            If you have any questions about this Privacy Policy, you may contact the developer:
+          </p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:copelandreshard@gmail.com">copelandreshard@gmail.com</a>
+          </p>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer class="container">
+    <p>© 2026 Toggler. All rights reserved.</p>
+  </footer>
+</body>
+</html>
