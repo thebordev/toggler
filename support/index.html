@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support for Toggler</title>
+  <meta name="description" content="Support page for the Toggler mobile application" />
+  <style>
+    :root {
+      --card: rgba(255, 255, 255, 0.92);
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #007aff;
+      --accent-soft: rgba(0, 122, 255, 0.12);
+      --border: rgba(17, 24, 39, 0.08);
+      --shadow: 0 24px 70px rgba(0, 61, 128, 0.14);
+      --radius: 20px;
+      --max-width: 920px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(0, 122, 255, 0.18), transparent 34%),
+        linear-gradient(180deg, #f2f6ff 0%, #ffffff 48%, #eef4fb 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 64px 0 32px;
+    }
+
+    .hero-card,
+    .section,
+    .toc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .hero-card {
+      border-radius: 28px;
+      padding: 40px 32px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(32px, 5vw, 48px);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 720px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .meta-item {
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      background: rgba(0, 122, 255, 0.04);
+      border-radius: 14px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 24px;
+      padding: 12px 0 56px;
+    }
+
+    .toc {
+      position: sticky;
+      top: 24px;
+      align-self: start;
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .toc h2 {
+      margin: 0 0 14px;
+      font-size: 15px;
+    }
+
+    .toc ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .toc li + li {
+      margin-top: 10px;
+    }
+
+    .toc a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .toc a:hover {
+      color: var(--accent);
+    }
+
+    .content {
+      display: grid;
+      gap: 18px;
+    }
+
+    .section {
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    .section p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .section p:last-child,
+    .section ul:last-child,
+    .section ol:last-child {
+      margin-bottom: 0;
+    }
+
+    .section ul,
+    .section ol {
+      margin: 14px 0;
+      padding-left: 22px;
+      color: var(--muted);
+    }
+
+    .section li + li {
+      margin-top: 8px;
+    }
+
+    .note {
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+      padding: 14px 16px;
+      border-radius: 12px;
+      color: #003d80;
+      margin-top: 14px;
+    }
+
+    .contact-box {
+      background: linear-gradient(180deg, rgba(0, 122, 255, 0.08), rgba(255, 255, 255, 0.9));
+      border: 1px solid rgba(0, 122, 255, 0.18);
+    }
+
+    code {
+      padding: 2px 6px;
+      border-radius: 8px;
+      background: rgba(0, 122, 255, 0.09);
+      color: #003d80;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    footer {
+      padding: 0 0 40px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        position: static;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding-top: 32px;
+      }
+
+      .hero-card,
+      .section,
+      .toc {
+        padding: 22px;
+      }
+
+      .meta {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <div class="hero-card">
+        <div class="eyebrow">Toggler · Support</div>
+        <h1>Support for Toggler</h1>
+        <p class="subtitle">
+          Help, troubleshooting, and contact information for the Toggler mobile application.
+        </p>
+        <div class="meta">
+          <div class="meta-item"><strong>App:</strong> Toggler</div>
+          <div class="meta-item"><strong>Version:</strong> 1.0.0</div>
+          <div class="meta-item"><strong>Last updated:</strong> April 21, 2026</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="layout">
+      <nav class="toc" aria-label="Table of contents">
+        <h2>Contents</h2>
+        <ul>
+          <li><a href="#contact">1. Contact Support</a></li>
+          <li><a href="#setup">2. Getting Started</a></li>
+          <li><a href="#review">3. App Review Demo</a></li>
+          <li><a href="#troubleshooting">4. Troubleshooting</a></li>
+          <li><a href="#privacy">5. Privacy</a></li>
+        </ul>
+      </nav>
+
+      <section class="content">
+        <article class="section contact-box" id="contact">
+          <h2>1. Contact Support</h2>
+          <p>
+            If you need help with Toggler, contact the developer by email:
+          </p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:copelandreshard@gmail.com">copelandreshard@gmail.com</a>
+          </p>
+          <p>
+            Please include your app version, device model, iOS version, and a short description of the issue.
+          </p>
+        </article>
+
+        <article class="section" id="setup">
+          <h2>2. Getting Started</h2>
+          <p>
+            Toggler is a mobile companion for managing feature groups, feature values, and rollout strategies on a FeatureHub-compatible server.
+          </p>
+          <ol>
+            <li>Open Toggler.</li>
+            <li>Enter your FeatureHub server URL.</li>
+            <li>Enter your bearer token.</li>
+            <li>Tap Connect.</li>
+            <li>Select a project to view and manage feature groups.</li>
+          </ol>
+          <div class="note">
+            Production use requires access to a FeatureHub-compatible backend and a valid bearer token.
+          </div>
+        </article>
+
+        <article class="section" id="review">
+          <h2>3. App Review Demo</h2>
+          <p>
+            For App Store review or quick testing, Toggler includes an in-memory demo mode that does not call an external backend.
+          </p>
+          <ol>
+            <li>Open the app.</li>
+            <li>If onboarding appears, tap Get started or Skip.</li>
+            <li>In Server URL enter <code>demo</code>.</li>
+            <li>In Bearer token enter <code>token</code>.</li>
+            <li>Tap Connect.</li>
+          </ol>
+          <p>
+            The demo project lets reviewers search groups, switch between list and grid views, edit a group, manage rollout strategies, duplicate a group, and test snapshot actions.
+          </p>
+        </article>
+
+        <article class="section" id="troubleshooting">
+          <h2>4. Troubleshooting</h2>
+          <ul>
+            <li>Check that your server URL is reachable from the device.</li>
+            <li>Confirm that your bearer token is valid and has access to the selected project.</li>
+            <li>Verify network, VPN, or firewall settings if projects or groups do not load.</li>
+            <li>Update to the latest version of Toggler when available.</li>
+            <li>If a problem continues, contact support with steps to reproduce it.</li>
+          </ul>
+        </article>
+
+        <article class="section" id="privacy">
+          <h2>5. Privacy</h2>
+          <p>
+            Toggler is designed to minimize data collection. It does not include analytics, advertising, or tracking SDKs.
+          </p>
+          <p>
+            Read the full Privacy Policy here:
+            <a href="../privacy/">Privacy Policy for Toggler</a>
+          </p>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer class="container">
+    <p>© 2026 Toggler. All rights reserved.</p>
+  </footer>
+</body>
+</html>
